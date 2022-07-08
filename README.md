@@ -1,1 +1,1 @@
-# ChooseEat
+ChooseEat is the web application which provides the food delivery services.The main objective of this application is  to manage the details of Food items, Categories, Customer, orders, Confirm orders.It alos Provides search capabilities based on a variety of criteria such as Food Item, Customer, Order, Confirm Order.It can also be used To improve the efficiency of the Food Item, Category management.
