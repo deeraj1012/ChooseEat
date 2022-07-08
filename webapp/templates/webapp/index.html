@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+   {% load staticfiles %}
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{% block title %}ChooseEat{% endblock title %}</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/bootstrap.min.css'%}">
+
+  <link href="/static/webapp/css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' >
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <!--Animation-->
+  <script src="/static/webapp/js/wow.min.js"></script>
+  <link href="static/webapp/css/animate.css" rel='stylesheet' type='text-center/css' />
+
+<style type="text/css">
+  .big-banner{
+    background-image: url('/static/webapp/images/slide_1.jpg');
+  }
+  .i-am-center{
+    margin-left:26%; max-width: 100%;
+  }
+  .borders{
+    background-color: blue;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .wrapper {
+    min-height: 100%;
+    height: 100%;
+    margin: 0 auto -155px; 
+}
+  .footer, .push {
+    height: 155px; 
+}
+</style>
+</head>
+<body>
+	
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-fixed-top">
+   		 <div class="container-fluid">
+   		 	 <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
+        <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item active">
+                <a class="nav-link text-light" href="{% url 'restuarant'%} ">&nbsp; <strong style="margin-left:1em;">Customer</strong> </a>
+            </li>
+        </ul>
+    </div>
+    <div class="mx-auto my-2 order-0 order-md-1 position-relative">
+        <a class="mx-auto" href="#">
+            <img  src="/static/webapp/images/WEB_Logo.png" style="height: 90px;  margin-left:1em;" alt="Home">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
+        <ul class="navbar-nav mr-auto text-center">
+            <li class="nav-item">
+                <a class="nav-link text-light" href="{% url 'rlogin'%}"> &nbsp;&nbsp;<strong>Restaurants</strong> </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</nav>
+<div class="jumbotron big-banner" style="height: 500px; width: 100%; padding-top:100px;" >
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="col4 text-light ">
+					<h1 style="font-style:italic; font-family:sans-serif; "><strong>Feeling Hungry</strong></h1>
+					<h2><strong>Register Now<br/>and<br/>Order Online</strong></h2>
+				</div>
+			<br>
+      <button type="button" class="btn btn-success btn-lg"><strong><a href="{% url 'register'%}" class="text-light">Register</a></strong></button>
+			</div>
+        <div class="col">
+          <div class="col4 text-light">
+            <h1 style="font-style:italic; font-family:sans-serif; "><strong>Be a Partner</strong></h1>
+          <h2><strong>Join Us Today<br/>and<br>Increase Your Sale</strong></h2>
+        </div>
+        <br>
+        <button type="button" class="btn btn-success btn-lg"><strong><a href="{% url 'rregister'%}" class="text-light">Join Us</a></strong></button>
+      </div>
+      </div>
+    </div>
+
+	</div>
+</div>
+<br>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin-left:20em;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+<body>
+
+
+<div class="slideshow-container">
+<div class="mySlides fade">
+  <div class="numbertext">1 / 8</div>
+  <img src="static/webapp/images/dish_1.jpg" style="width:90%; border-radius: 25px;">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 8</div>
+  <img src="static/webapp/images/dish_8.jpg" style="width:90%; border-radius: 25px;">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 8</div>
+  <img src="static/webapp/images/dish_3.jpg" style="width:90%;  border-radius: 25px;">
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">4 / 8</div>
+  <img src="static/webapp/images/dish_10.jpg" style="width:90%; border-radius: 25px;">
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">5 / 8</div>
+  <img src="static/webapp/images/dish_9.jpg" style="width:90%; border-radius: 25px;">
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">6 / 8</div>
+  <img src="static/webapp/images/dish_11.jpg" style="width:90%; border-radius: 25px;">
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">7 / 8</div>
+  <img src="static/webapp/images/dish_12.jpg" style="width:90%; border-radius: 25px;">
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">8 / 8</div>
+  <img src="static/webapp/images/dish_13.jpg" style="width:90%; border-radius: 25px;">
+</div>
+<br>
+</div>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+<div class="content">
+		<div class="ordering-section" id="Order">
+			<div class="container">
+				<div class="ordering-section-head text-center wow bounceInRight" data-wow-delay="0.4s">
+					<h3 style="font-style:italic; font-family:yellowtail;">Ordering Food was Never So Easy</h3>
+					<div class="dotted-line">
+						<h4>Just 4 steps to follow </h4>
+					</div>
+				</div>
+				<div class="i-am-center">
+				<div class="row ">
+					<div class="col-sm-2 col-md-2">
+            <img  src="/static/webapp/images/Flowchart.png" style="height: 160px;  margin-left:-6em;" alt="Home">
+					</div>          
+					<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+<br>
+<div class="ordering-section-head text-center wow bounceInRight" data-wow-delay="0.4s">
+  <h3 style="font-style:oblique;font-size: 28px;font-family: Arial;font-weight: normal;color:rgb(236, 85, 85)">Wait! &#9203 Check these before meeting your lunch ....&#128071;</h3>
+</div>
+<br>
+<br>
+<div class="container col-md-9">
+		<div class="top-restaurent-head">
+						<h3>Top Restaurants</h3>
+		</div> 
+		<div class="row">
+			 
+               <div class="col-md-4 ">
+                    <div class="thumbnail">
+                    	<a href="" >
+                    	<img src="/static/webapp/images/restaurent-2.jpg" style="margin-bottom: 1cm;" class="img-responsive" alt="" />
+                    </a>
+
+                    </div>
+              </div>
+              <br>
+               <br>
+               <div class="col-md-4 ">
+                    <div class="thumbnail">
+                    	<a href="">
+                    	<img src="/static/webapp/images/restaurent-5.jpg" class="img-responsive" alt="" />
+                    </a>
+                    </div>
+              </div>
+              <br>
+               <div class="col-md-4 ">
+                    <div class="thumbnail">
+                    	<a href="">
+                    	<img src="/static/webapp/images/restaurent-6.jpg" class="img-responsive" alt="" />
+                    </a>
+                    </div>
+              </div>
+          </div>    
+		</div>
+	</div>
+
+<br>
+<br>
+<div class="container col-md-9">
+	<div class="top-cuisine-head">
+			<h3>Top Cuisines</h3>
+	</div>
+  <div class="dishes">
+	<div class="row">
+		 <div class="col-md-4 ">
+                    <div class="thumbnail">
+                    	<a href="">
+                    	<img src="/static/webapp/images/cuisine1.jpg" class="img-responsive" alt="" />
+                    </a>
+                    </div>
+                    		<h5 class="text-secondary" style="margin-left:2.5em;"><strong>Pizza</strong></h5>
+              </div>
+               <div class="col-md-4 mb-3">
+                    <div class="thumbnail">
+                    	<a href="">
+                    	<img src="/static/webapp/images/cuisine2.jpg" class="img-responsive" alt="" />
+                    </a>
+                    </div>
+                    		<h5 class="text-secondary "  style="margin-left:2.5em;"><strong>Burger</strong></h5>
+              </div>
+
+               <div class="col-md-4 ">
+                    <div class="thumbnail">
+                    	<a href="">
+                    	<img src="/static/webapp/images/cuisine3.jpg" class="img-responsive" alt="" />
+                    </a>
+                    </div>
+                    		<h5 class="text-secondary" style="margin-left:1.5em;"><strong>Doughnut</strong></h5>
+              </div>
+               <div class="col-md-4 mb-3">
+                    <div class="thumbnail">
+                    	<a href="">
+                    	<img src="/static/webapp/images/cuisine4.jpg" class="img-responsive" alt="" />
+                    </a>
+                    </div>
+                    		<h5 class="text-secondary" style="margin-left:2.5em;"><strong>Curry</strong></h5>
+              </div>
+               <div class="col-md-4 ">
+                    <div class="thumbnail">
+                    	<a href="">
+                    	<img src="/static/webapp/images/cuisine5.jpg" class="img-responsive" alt="" />
+                    </a>
+                    </div>
+                    		<h5 class="text-secondary" style="margin-left:2.5em;"><strong>Strips</strong></h5>
+              </div>
+               <div class="col-md-4 ">
+                    <div class="thumbnail">
+                    	<a href="">
+                    	<img src="/static/webapp/images/cuisine6.jpg" class="img-responsive" alt="" />
+                    </a>
+                    </div>
+                    		<h5 class="text-secondary" style="margin-left:0.5em;"><strong>Prawns Puloa</strong></h5>
+              </div>
+              </div>
+              <div class="clearfix"></div>
+	</div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<style>
+  #dishes img {
+border: none;
+  }
+  </style>
+
+<div class="footer">
+		<div class="container">
+        <a href=# style=" font-family:sans serif; font-size:30px; width: 250px; margin-left:7em;">Take your taste buds on a world tour of the best Restraunts</a>
+		</div>
+	</div>
+ 
+				
+<script type="text/javascript" src="{%static 'webapp/js/jquery.min.js'%}">
+	</script>
+	<script type="text/javascript" src="{%static 'webapp/js/bootstrap.min.js'%}"></script>
+<script>
+	new WOW().init();
+</script>
+<script src="/static/webapp/js/simpleCart.min.js"> </script>
+<script type="text/javascript" src="/static/webapp/js/move-top.js"></script>
+<script type="text/javascript" src="/static/webapp/js/easing.js"></script>
+</body>
+</html>

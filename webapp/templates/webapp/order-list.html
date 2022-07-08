@@ -1,0 +1,117 @@
+{% extends 'webapp/base2.html' %}
+{% block title %}Order List{% endblock %}
+<style>
+   #orderitem {
+      
+       border-radius: 25px;
+       border: 2px solid rgb(181, 134, 235);
+   } 
+   .logo-tittle {
+  display: block;
+  text-align: center;
+}
+#orderstatus {
+      box-sizing: border-box;
+      border-color: rgba(69, 199, 204, 0.726);
+      background-color: rgb(199, 199, 199);
+      border-radius:8px;
+      border-width: 3.5px;
+      
+    }
+h4
+{
+  display: inline-block;
+  text-align: center;
+}
+</style>
+{% block body %}
+{% for order in orders %}
+<br>
+<div id=orderitem style=" border-width: 1cm; ">
+            <div class="container" style="       border-radius: 10px;
+                                                 border: 3px solid rgb(18, 204, 11);
+                                                 box-shadow: 10px 10px 5px rgb(180, 175, 175);
+                                                  ">
+                    <div class="col-md-12 restaurent-title">
+                        <div class="logo-title" style="border:0rem; ">
+                          <h4> <div style="width:40%;float:left; font-family:Arial;font-size:24px; color:rgb(0, 153, 255)"><strong>Customer Details:</strong></div><div style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;line-height: 1.5;margin-left:40%"><strong style="color:rgb(218, 68, 68); font-size:21px"><b>Name:</b></strong> {{order.0}}<br><strong style="color:rgb(218, 68, 68); font-size:21px"> Mobile No: </strong>{{order.1}}<br><strong style="color:rgb(218, 68, 68); font-size:21px"> Address:</strong> {{order.6}}</div>
+                        </h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12 order-form-grid  wow fadeInLeft">
+                        <h5 style="font-family:Arial;font-size:22.5px; color:rgb(0, 153, 255)">Order Information:</h5>
+                        <span style="font-family: verdana;color: saddlebrown;">Items List:</span>
+                        <div>
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <th style="color: seagreen;">
+                                        Name
+                                    </th>
+                                    <th style="color: seagreen;">
+                                        Quantity
+                                    </th>
+                                    <th style="color: seagreen;">
+                                        Price
+                                    </th>
+                                </thead>
+                                {% for x in order.2 %}
+                                    <tr><td>{{x.0}}</td><td>{{x.1}}</td><td>&#x20b9;{{x.2}}</td></tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-12 buy"  style="display: inline-block;">
+                        <form action="" method="POST">{% csrf_token %}
+                        <span style="color: rgb(185, 32, 32);">Total price: &#x20b9;{{order.3}}</span>
+                        <span  style="display: inline; font-family:'Segoe UI';font-size: 22px;color:slategray;">Status:</span>
+                        <select name="orderstatus" id=orderstatus>
+                            {% if order.5 == 1 %}
+                            <option value="1" selected>Placed</option>
+                            <option value="2">Acknowledged</option>
+                            <option value="3">Completed</option>
+                            <option value="4">Dispatched</option>
+                            <option value="5">Cancelled</option>
+                            {% endif %}
+                            {% if order.5 == 2 %}
+                            <option value="1">Placed</option>
+                            <option value="2" selected>Acknowledged</option>
+                            <option value="3">Completed</option>
+                            <option value="4">Dispatched</option>
+                            <option value="5">Cancelled</option>
+                            {% endif %}
+                            {% if order.5 == 3 %}
+                            <option value="1">Placed</option>
+                            <option value="2">Acknowledged</option>
+                            <option value="3" selected>Completed</option>
+                            <option value="4">Dispatched</option>
+                            <option value="5">Cancelled</option>
+                            {% endif %}
+                            {% if order.5 == 4 %}
+                            <option value="1">Placed</option>
+                            <option value="2">Acknowledged</option>
+                            <option value="3">Completed</option>
+                            <option value="4" selected>Dispatched</option>
+                            <option value="5">Cancelled</option>
+                            {% endif %}
+                            {% if order.5 == 5 %}
+                            <option value="1">Placed</option>
+                            <option value="2">Acknowledged</option>
+                            <option value="3">Completed</option>
+                            <option value="4">Dispatched</option>
+                            <option value="5" selected>Cancelled</option>
+                            {% endif %}
+                        </select>
+                        <input type="hidden" name="orderid" value="{{order.4}}">
+                        <input type="submit" value="Set" name="submit" style="width: 07%; border-radius: 5px; background-color:steelblue;border-color:black;color:white;font: display 18px;font-weight: bold;"/>
+                        </form>
+                        <br>
+                    </div>
+                  
+                </div>
+                <br>
+                    <div class="clearfix"></div>
+                
+            
+        </div>
+{% endfor %}
+{% endblock %}
